@@ -1,0 +1,103 @@
+/* Bad Monkey Adventures */
+:root{
+  --bg:#0c1420;
+  --panel:#131e2e;
+  --panel-2:#182638;
+  --ink:#f4f1ea;
+  --muted:#9fb0c3;
+  --line:#24344a;
+  --sun:#ff9f1c;       /* sunset orange */
+  --sun-deep:#e07b00;
+  --sea:#2ec4b6;       /* tropical teal */
+  --sea-deep:#1a8f85;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+::selection{background:var(--sun);color:#1a1206}
+a{color:var(--sea);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 5vw;background:rgba(12,20,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:1rem;color:var(--ink)}
+.logo .mark{font-size:1.5rem;transform:rotate(-12deg);display:inline-block}
+.logo:hover{text-decoration:none}
+nav .links{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+nav .links a{color:var(--muted);padding:.2rem 0;border-bottom:2px solid transparent}
+nav .links a:hover{color:var(--ink);text-decoration:none;border-bottom-color:var(--sun)}
+nav .links a.active{color:var(--ink);border-bottom-color:var(--sun)}
+
+/* Hero */
+.hero{position:relative;padding:6.5rem 5vw 5.5rem;text-align:center;
+  background:
+   radial-gradient(ellipse 80% 55% at 50% 0%,rgba(46,196,182,.16),transparent 60%),
+   radial-gradient(ellipse 55% 40% at 85% 90%,rgba(255,159,28,.14),transparent 65%),
+   var(--bg);}
+.hero .kicker{font-family:'Space Mono',monospace;color:var(--sun);letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.hero h1 .accent{color:var(--sun)}
+.hero p{margin:1.4rem auto 0;max-width:38rem;color:var(--muted);font-size:1.08rem}
+.cta-row{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+.btn{display:inline-block;padding:.95rem 2rem;border-radius:8px;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;transition:.22s}
+.btn-sun{background:var(--sun);color:#1a1206}
+.btn-sun:hover{background:#ffb54d;text-decoration:none;box-shadow:0 0 26px rgba(255,159,28,.35)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--sea);color:var(--sea);text-decoration:none}
+
+/* Sections */
+section{padding:4.5rem 5vw;max-width:1200px;margin:0 auto}
+.sec-label{font-family:'Space Mono',monospace;color:var(--sea);font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:.7rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.8rem}
+.lead{color:var(--muted);max-width:44rem}
+
+/* Adventure cards (home) */
+.adventures{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;margin-top:2.6rem}
+.adv{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.adv:hover{transform:translateY(-5px);border-color:var(--sun);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.adv .art{aspect-ratio:16/9;width:100%;display:block}
+.adv .body{padding:1.4rem 1.5rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.adv h3{font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.5rem}
+.adv h3 .tag{color:var(--sun)}
+.adv p{color:var(--muted);font-size:.95rem;flex:1}
+.adv .go{margin-top:1.2rem;font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+.adv:hover .go{color:var(--sun)}
+
+/* Page hero (sub pages) */
+.page-hero{padding:5rem 5vw 3rem;text-align:left;max-width:1200px;margin:0 auto}
+.page-hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05}
+.page-hero h1 .accent{color:var(--sun)}
+.page-hero p{margin-top:1.1rem;color:var(--muted);max-width:44rem;font-size:1.05rem}
+
+/* Trips table */
+.trips{margin-top:2.2rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.trips table{width:100%;border-collapse:collapse;font-size:.95rem}
+.trips th{background:var(--panel-2);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:left;padding:.9rem 1.2rem}
+.trips td{padding:1rem 1.2rem;border-top:1px solid var(--line);color:var(--ink)}
+.trips td.muted{color:var(--muted)}
+.trips tr:hover td{background:rgba(46,196,182,.05)}
+.badge{display:inline-block;background:rgba(255,159,28,.14);color:var(--sun);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
+.badge.teal{background:rgba(46,196,182,.13);color:var(--sea)}
+
+/* Detail feature list */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2.2rem}
+.feat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.5rem}
+.feat h4{font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;color:var(--sun)}
+.feat p{color:var(--muted);font-size:.9rem}
+
+.notice{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:1.3rem 1.5rem;margin-top:2rem;color:var(--muted);font-size:.95rem}
+.notice strong{color:var(--sun)}
+
+/* Contact */
+.contact{text-align:center;padding-bottom:6rem}
+.contact .email{font-family:'Space Mono',monospace;font-size:clamp(1rem,3vw,1.5rem);color:var(--ink);border-bottom:2px solid var(--sun);padding-bottom:.2rem}
+.contact .email:hover{color:var(--sun);text-decoration:none}
+.contact p{color:var(--muted);max-width:36rem;margin:.8rem auto}
+
+footer{border-top:1px solid var(--line);padding:2rem 5vw;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+footer a{color:var(--muted)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}

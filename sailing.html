@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bad Monkey Sailing — International Sailing Trips</title>
+<meta name="description" content="Bad Monkey Adventures — guided international sailing and adventure motorcycle trips. Book at badmonkeyadventures@gmail.com">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<nav>
+  <a class="logo" href="index.html"><span class="mark">🐒</span> Bad Monkey Adventures</a>
+  <div class="links">
+    <a href="sailing.html" data-p="sailing">Sailing</a>
+    <a href="moto.html" data-p="moto">Moto</a>
+    <a href="index.html#contact" data-p="contact">Book a Trip</a>
+  </div>
+</nav>
+<header class="page-hero">
+  <div class="sec-label">Bad Monkey Sailing</div>
+  <h1>International Sailing<br><span class="accent">Aboard Bad Monkey</span></h1>
+  <p>Join the crew for international sailing adventures aboard our sailboat. These are hands-on passages — you'll stand watch, trim sails, navigate new waters, and drop anchor in harbors most travelers never see. No sailing experience required for most trips; bring a flexible attitude and a working sense of humor.</p>
+</header>
+
+<section>
+  <div class="sec-label">What a Trip Looks Like</div>
+  <div class="features">
+    <div class="feat reveal"><h4>Live Aboard</h4><p>Sleep on the boat, cook as a crew, live on island time between ports.</p></div>
+    <div class="feat reveal"><h4>Learn the Ropes</h4><p>Real sail handling and passage-making skills — as much or as little as you want to learn.</p></div>
+    <div class="feat reveal"><h4>International Waters</h4><p>Multi-day passages, border crossings by sea, and anchorages off the beaten path.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">Upcoming Trips</div>
+  <h2>Sailing Calendar</h2>
+  <div class="trips reveal">
+    <table>
+      <thead><tr><th>Trip</th><th>Route</th><th>Dates</th><th>Cost</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Trip announcement coming soon</strong></td><td class="muted">Route TBA</td><td class="muted">Dates TBA</td><td class="muted">TBA</td><td><span class="badge">Planning</span></td></tr>
+        <tr><td class="muted" colspan="5">Want first dibs when dates drop? <a href="mailto:badmonkeyadventures@gmail.com?subject=Bad%20Monkey%20Sailing%20Waitlist">Get on the list.</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice"><strong>Note:</strong> Trip details, dates, and pricing are being finalized. Email us to hear about new departures first — serious inquiries get first berth.</div>
+</section>
+
+<section class="contact">
+  <h2>Ready to Crew Up?</h2>
+  <p>Tell us your experience level (zero is fine) and what kind of passage you're dreaming about.</p>
+  <p style="margin-top:1.4rem"><a class="email" href="mailto:badmonkeyadventures@gmail.com?subject=Bad%20Monkey%20Sailing%20Inquiry">badmonkeyadventures@gmail.com</a></p>
+</section>
+<footer>
+  <span>&copy; 2026 Bad Monkey Adventures</span>
+  <span><a href="mailto:badmonkeyadventures@gmail.com">badmonkeyadventures@gmail.com</a></span>
+</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelector('nav a[data-p="sailing"]')?.classList.add('active');
+</script>
+</body></html>
