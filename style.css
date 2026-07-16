@@ -6,9 +6,9 @@
   --ink:#f4f1ea;
   --muted:#9fb0c3;
   --line:#24344a;
-  --sun:#ff9f1c;       /* sunset orange */
+  --sun:#ff9f1c;
   --sun-deep:#e07b00;
-  --sea:#2ec4b6;       /* tropical teal */
+  --sea:#2ec4b6;
   --sea-deep:#1a8f85;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,31 +20,33 @@ a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 
 /* Nav */
-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 5vw;background:rgba(12,20,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:1rem;color:var(--ink)}
-.logo .mark{font-size:1.5rem;transform:rotate(-12deg);display:inline-block}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 5vw;background:rgba(12,20,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.95rem;color:var(--ink)}
+.logo .brand-mark{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,159,28,.55);box-shadow:0 0 0 2px rgba(46,196,182,.15);background:#fff}
 .logo:hover{text-decoration:none}
-nav .links{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+nav .links{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
 nav .links a{color:var(--muted);padding:.2rem 0;border-bottom:2px solid transparent}
 nav .links a:hover{color:var(--ink);text-decoration:none;border-bottom-color:var(--sun)}
 nav .links a.active{color:var(--ink);border-bottom-color:var(--sun)}
 
 /* Hero */
-.hero{position:relative;padding:6.5rem 5vw 5.5rem;text-align:center;
-  background:
-   radial-gradient(ellipse 80% 55% at 50% 0%,rgba(46,196,182,.16),transparent 60%),
-   radial-gradient(ellipse 55% 40% at 85% 90%,rgba(255,159,28,.14),transparent 65%),
-   var(--bg);}
-.hero .kicker{font-family:'Space Mono',monospace;color:var(--sun);letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;margin-bottom:1.1rem}
-.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 5vw 5.5rem;overflow:hidden}
+.hero-media{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.03)}
+.hero-media::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(12,20,32,.55) 0%,rgba(12,20,32,.72) 45%,rgba(12,20,32,.92) 100%),
+  radial-gradient(ellipse 70% 50% at 50% 20%,rgba(46,196,182,.18),transparent 70%)}
+.hero-inner{position:relative;z-index:1;max-width:920px}
+.hero .kicker{font-family:'Space Mono',monospace;color:var(--sun);letter-spacing:.28em;text-transform:uppercase;font-size:.78rem;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.5rem,7vw,4.8rem);font-weight:800;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase;text-shadow:0 8px 30px rgba(0,0,0,.35)}
 .hero h1 .accent{color:var(--sun)}
-.hero p{margin:1.4rem auto 0;max-width:38rem;color:var(--muted);font-size:1.08rem}
-.cta-row{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero p{margin:1.3rem auto 0;max-width:40rem;color:#d7e2ef;font-size:1.08rem}
+.cta-row{margin-top:2.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-logo{width:118px;height:118px;border-radius:50%;object-fit:cover;margin:0 auto 1.2rem;border:3px solid rgba(255,159,28,.7);box-shadow:0 12px 40px rgba(0,0,0,.4);background:#fff}
 
 .btn{display:inline-block;padding:.95rem 2rem;border-radius:8px;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;transition:.22s}
 .btn-sun{background:var(--sun);color:#1a1206}
 .btn-sun:hover{background:#ffb54d;text-decoration:none;box-shadow:0 0 26px rgba(255,159,28,.35)}
-.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost{border:1px solid rgba(255,255,255,.28);color:var(--ink);background:rgba(12,20,32,.25)}
 .btn-ghost:hover{border-color:var(--sea);color:var(--sea);text-decoration:none}
 
 /* Sections */
@@ -53,23 +55,46 @@ section{padding:4.5rem 5vw;max-width:1200px;margin:0 auto}
 h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.8rem}
 .lead{color:var(--muted);max-width:44rem}
 
-/* Adventure cards (home) */
+/* Adventure cards */
 .adventures{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;margin-top:2.6rem}
 .adv{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
-.adv:hover{transform:translateY(-5px);border-color:var(--sun);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.adv .art{aspect-ratio:16/9;width:100%;display:block}
+.adv:hover{transform:translateY(-5px);border-color:var(--sun);box-shadow:0 18px 40px rgba(0,0,0,.35);text-decoration:none}
+.adv .art{aspect-ratio:16/9;width:100%;object-fit:cover;display:block}
 .adv .body{padding:1.4rem 1.5rem 1.7rem;display:flex;flex-direction:column;flex:1}
-.adv h3{font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.5rem}
+.adv h3{font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.5rem;color:var(--ink);display:flex;align-items:center;gap:.55rem}
 .adv h3 .tag{color:var(--sun)}
+.adv h3 img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.2)}
 .adv p{color:var(--muted);font-size:.95rem;flex:1}
 .adv .go{margin-top:1.2rem;font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
 .adv:hover .go{color:var(--sun)}
 
-/* Page hero (sub pages) */
-.page-hero{padding:5rem 5vw 3rem;text-align:left;max-width:1200px;margin:0 auto}
-.page-hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05}
+/* Page hero */
+.page-hero{position:relative;padding:6.5rem 5vw 3.5rem;overflow:hidden}
+.page-hero-media{position:absolute;inset:0;background-size:cover;background-position:center}
+.page-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,20,32,.45),rgba(12,20,32,.88) 70%,var(--bg))}
+.page-hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center}
+.page-hero-inner img.badge{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,159,28,.65);box-shadow:0 10px 30px rgba(0,0,0,.35);background:#fff}
+.page-hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05}
 .page-hero h1 .accent{color:var(--sun)}
-.page-hero p{margin-top:1.1rem;color:var(--muted);max-width:44rem;font-size:1.05rem}
+.page-hero p{margin-top:1rem;color:#d7e2ef;max-width:44rem;font-size:1.05rem}
+@media (max-width:700px){
+  .page-hero-inner{grid-template-columns:1fr;justify-items:start}
+  .page-hero-inner img.badge{width:96px;height:96px}
+}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+.gallery figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .35s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{padding:.75rem 1rem 1rem;color:var(--muted);font-size:.85rem}
+
+/* Split brand strip */
+.brand-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
+.brand-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.3rem;display:flex;gap:1rem;align-items:center}
+.brand-card img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,159,28,.45);background:#fff;flex-shrink:0}
+.brand-card h4{font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
+.brand-card p{color:var(--muted);font-size:.9rem}
 
 /* Trips table */
 .trips{margin-top:2.2rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -81,7 +106,7 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;l
 .badge{display:inline-block;background:rgba(255,159,28,.14);color:var(--sun);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
 .badge.teal{background:rgba(46,196,182,.13);color:var(--sea)}
 
-/* Detail feature list */
+/* Features */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2.2rem}
 .feat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.5rem}
 .feat h4{font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;color:var(--sun)}
@@ -96,7 +121,9 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;l
 .contact .email:hover{color:var(--sun);text-decoration:none}
 .contact p{color:var(--muted);max-width:36rem;margin:.8rem auto}
 
-footer{border-top:1px solid var(--line);padding:2rem 5vw;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:2rem 5vw;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);align-items:center}
+footer .foot-brand{display:flex;align-items:center;gap:.7rem}
+footer .foot-brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.2);background:#fff}
 footer a{color:var(--muted)}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
