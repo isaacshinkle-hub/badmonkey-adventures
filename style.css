@@ -22,7 +22,7 @@ img{max-width:100%;display:block}
 /* Nav */
 nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 5vw;background:rgba(12,20,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.95rem;color:var(--ink)}
-.logo .brand-mark{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,159,28,.55);box-shadow:0 0 0 2px rgba(46,196,182,.15);background:#fff}
+.logo .brand-mark{width:46px;height:46px;border-radius:12px;object-fit:contain;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 2px rgba(225,0,18,.12);background:#fff;padding:2px}
 .logo:hover{text-decoration:none}
 nav .links{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
 nav .links a{color:var(--muted);padding:.2rem 0;border-bottom:2px solid transparent}
@@ -41,7 +41,7 @@ nav .links a.active{color:var(--ink);border-bottom-color:var(--sun)}
 .hero h1 .accent{color:var(--sun)}
 .hero p{margin:1.3rem auto 0;max-width:40rem;color:#d7e2ef;font-size:1.08rem}
 .cta-row{margin-top:2.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.hero-logo{width:118px;height:118px;border-radius:50%;object-fit:cover;margin:0 auto 1.2rem;border:3px solid rgba(255,159,28,.7);box-shadow:0 12px 40px rgba(0,0,0,.4);background:#fff}
+.hero-logo{width:min(220px,62vw);height:auto;aspect-ratio:1/1;border-radius:18px;object-fit:contain;margin:0 auto 1.2rem;border:2px solid rgba(225,0,18,.55);box-shadow:0 12px 40px rgba(0,0,0,.4);background:#fff;padding:.55rem}
 
 .btn{display:inline-block;padding:.95rem 2rem;border-radius:8px;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;transition:.22s}
 .btn-sun{background:var(--sun);color:#1a1206}
