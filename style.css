@@ -6,15 +6,15 @@
   --ink:#f4f1ea;
   --muted:#9fb0c3;
   --line:#24344a;
-  --sun:#ff9f1c;
-  --sun-deep:#e07b00;
+  --sun:#C8102E; /* Honda red to match logos */
+  --sun-deep:#9B0C22;
   --sea:#2ec4b6;
   --sea-deep:#1a8f85;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
-::selection{background:var(--sun);color:#1a1206}
+::selection{background:var(--sun);color:#fff}
 a{color:var(--sea);text-decoration:none}
 a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
@@ -44,8 +44,8 @@ nav .links a.active{color:var(--ink);border-bottom-color:var(--sun)}
 .hero-logo{width:min(220px,62vw);height:auto;aspect-ratio:1/1;border-radius:18px;object-fit:contain;margin:0 auto 1.2rem;border:2px solid rgba(225,0,18,.55);box-shadow:0 12px 40px rgba(0,0,0,.4);background:#fff;padding:.55rem}
 
 .btn{display:inline-block;padding:.95rem 2rem;border-radius:8px;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;transition:.22s}
-.btn-sun{background:var(--sun);color:#1a1206}
-.btn-sun:hover{background:#ffb54d;text-decoration:none;box-shadow:0 0 26px rgba(255,159,28,.35)}
+.btn-sun{background:var(--sun);color:#fff}
+.btn-sun:hover{background:#E01A3A;text-decoration:none;box-shadow:0 0 26px rgba(200,16,46,.4)}
 .btn-ghost{border:1px solid rgba(255,255,255,.28);color:var(--ink);background:rgba(12,20,32,.25)}
 .btn-ghost:hover{border-color:var(--sea);color:var(--sea);text-decoration:none}
 
@@ -73,7 +73,7 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;l
 .page-hero-media{position:absolute;inset:0;background-size:cover;background-position:center}
 .page-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,20,32,.45),rgba(12,20,32,.88) 70%,var(--bg))}
 .page-hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center}
-.page-hero-inner img.badge{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,159,28,.65);box-shadow:0 10px 30px rgba(0,0,0,.35);background:#fff}
+.page-hero-inner img.badge{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(200,16,46,.7);box-shadow:0 10px 30px rgba(0,0,0,.35);background:#fff}
 .page-hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05}
 .page-hero h1 .accent{color:var(--sun)}
 .page-hero p{margin-top:1rem;color:#d7e2ef;max-width:44rem;font-size:1.05rem}
@@ -92,7 +92,7 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;l
 /* Split brand strip */
 .brand-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
 .brand-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.3rem;display:flex;gap:1rem;align-items:center}
-.brand-card img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,159,28,.45);background:#fff;flex-shrink:0}
+.brand-card img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(200,16,46,.5);background:#fff;flex-shrink:0}
 .brand-card h4{font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
 .brand-card p{color:var(--muted);font-size:.9rem}
 
@@ -103,7 +103,7 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-transform:uppercase;l
 .trips td{padding:1rem 1.2rem;border-top:1px solid var(--line);color:var(--ink)}
 .trips td.muted{color:var(--muted)}
 .trips tr:hover td{background:rgba(46,196,182,.05)}
-.badge{display:inline-block;background:rgba(255,159,28,.14);color:var(--sun);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
+.badge{display:inline-block;background:rgba(200,16,46,.14);color:var(--sun);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
 .badge.teal{background:rgba(46,196,182,.13);color:var(--sea)}
 
 /* Features */
